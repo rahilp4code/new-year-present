@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg/rose-bg-2.jpg";
+import bg from "../assets/bg/rose-bg-10.jpg";
 
 export default function Countdown() {
   const navigate = useNavigate();
@@ -36,10 +36,17 @@ export default function Countdown() {
       {/* <div className="romantic-card px-12 py-10 text-center space-y-6 w-[90%] max-w-xl"> */}
       <div className="px-12 py-10 text-center space-y-6 w-[90%] max-w-xl">
         <p
+          //         className="
+          //   uppercase
+          //   tracking-[0.25em]
+          //   text-base sm:text-lg
+          //   font-medium
+          //   text-[rgb(216_129_116)]
+          // "
           className="
     uppercase
-    tracking-[0.25em]
-    text-base sm:text-lg
+    tracking-[0.3em]
+    text-lg sm:text-xl md:text-2xl
     font-medium
     text-[rgb(216_129_116)]
   "
@@ -82,11 +89,16 @@ export default function Countdown() {
           ))}
         </div>
 
-        {/* <p className="italic text-gray-600 text-lg">new year</p> */}
         <p
+          //         className="
+          //   italic
+          //   text-lg sm:text-xl
+          //   font-medium
+          //   text-[rgb(216_129_116)]
+          // "
           className="
     italic
-    text-lg sm:text-xl
+    text-xl sm:text-2xl md:text-3xl
     font-medium
     text-[rgb(216_129_116)]
   "
@@ -95,7 +107,7 @@ export default function Countdown() {
         </p>
 
         <button
-          className={`countdown-btn mx-auto ${
+          className={`countdown-btn mx-auto mt-4 ${
             !time.done && "opacity-50 cursor-not-allowed"
           }`}
           onClick={() =>

@@ -20,24 +20,36 @@ export default function Warning() {
       >
         {/* Title */}
         <p
+          // className="
+          //   uppercase
+          //   tracking-[0.25em]
+          //   text-base sm:text-lg
+          //   font-medium
+          //   text-[rgb(216_129_116)]
+          // "
           className="
-            uppercase
-            tracking-[0.25em]
-            text-base sm:text-lg
-            font-medium
-            text-[rgb(216_129_116)]
-          "
+    uppercase
+    tracking-[0.3em]
+    text-lg sm:text-xl md:text-2xl
+    font-medium
+    text-[rgb(216_129_116)]
+  "
         >
           Excuse me 😤
         </p>
 
         {/* Message */}
         <p
+          // className="
+          //   text-lg sm:text-xl
+          //   font-medium
+          //   text-[rgb(161_61_54)]
+          // "
           className="
-            text-lg sm:text-xl
-            font-medium
-            text-[rgb(161_61_54)]
-          "
+    text-xl sm:text-2xl md:text-3xl
+    font-medium
+    text-[rgb(161_61_54)]
+  "
         >
           That was not an option 😌
           <br />
@@ -46,7 +58,7 @@ export default function Warning() {
 
         {/* Back Button */}
         <button
-          className="countdown-btn mx-auto"
+          className="countdown-btn mx-auto mt-4"
           onClick={() => navigate("/question")}
         >
           Okay okay 😭❤️

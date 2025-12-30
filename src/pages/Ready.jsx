@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg/rose-bg-2.jpg";
+import bg from "../assets/bg/rose-bg-12.jpg";
 
 export default function Ready() {
   const navigate = useNavigate();
@@ -20,24 +20,36 @@ export default function Ready() {
       >
         {/* Title */}
         <p
+          // className="
+          //   uppercase
+          //   tracking-[0.25em]
+          //   text-base sm:text-lg
+          //   font-medium
+          //   text-[rgb(216_129_116)]
+          // "
           className="
-            uppercase
-            tracking-[0.25em]
-            text-base sm:text-lg
-            font-medium
-            text-[rgb(216_129_116)]
-          "
+    uppercase
+    tracking-[0.3em]
+    text-lg sm:text-xl md:text-2xl
+    font-medium
+    text-[rgb(216_129_116)]
+  "
         >
           One last thing…
         </p>
 
         {/* Question */}
         <p
+          // className="
+          //   text-xl sm:text-2xl
+          //   font-medium
+          //   text-[rgb(161_61_54)]
+          // "
           className="
-            text-xl sm:text-2xl
-            font-medium
-            text-[rgb(161_61_54)]
-          "
+    text-2xl sm:text-3xl md:text-4xl
+    font-medium
+    text-[rgb(161_61_54)]
+  "
         >
           Are you ready? 💖
         </p>

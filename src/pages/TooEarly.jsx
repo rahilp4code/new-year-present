@@ -23,7 +23,7 @@ export default function TooEarly() {
           className="
             uppercase
             tracking-[0.25em]
-            text-base sm:text-lg
+            text-lg sm:text-xl md:text-2xl
             font-medium
             text-[rgb(216_129_116)]
           "
@@ -34,7 +34,7 @@ export default function TooEarly() {
         {/* Message */}
         <p
           className="
-            text-lg sm:text-xl
+            text-m sm:text-2xl md:text-3xl
             font-medium
             text-[rgb(161_61_54)]
           "
@@ -49,7 +49,7 @@ export default function TooEarly() {
           className="
             countdown-btn
             mx-auto
-            mt-2
+            p-4
           "
           onClick={() => navigate("/countdown")}
         >

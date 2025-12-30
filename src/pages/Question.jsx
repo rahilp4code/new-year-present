@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg/rose-bg-2.jpg";
+import bg from "../assets/bg/rose-bg-7.jpg";
 
 export default function Question() {
   const navigate = useNavigate();
@@ -19,20 +19,32 @@ export default function Question() {
         "
       >
         {/* Title */}
-        <p
+        {/* <p
           className="
             uppercase
             tracking-[0.25em]
-            text-base sm:text-lg
+            text-base sm:text-1g
             font-medium
             text-[rgb(216_129_116)]
           "
         >
           Hii my love 💕
+        </p> */}
+        {/* Title */}
+        <p
+          className="
+    uppercase
+    tracking-[0.3em]
+    text-lg sm:text-xl md:text-2xl
+    font-medium
+    text-[rgb(216_129_116)]
+  "
+        >
+          Hii my love 💕
         </p>
 
         {/* Question */}
-        <p
+        {/* <p
           className="
             text-lg sm:text-xl
             font-medium
@@ -40,10 +52,19 @@ export default function Question() {
           "
         >
           I got a surprise for you…
+        </p> */}
+        <p
+          className="
+    text-xl sm:text-2xl md:text-3xl
+    font-medium
+    text-[rgb(161_61_54)]
+  "
+        >
+          I got a surprise for you…
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
           <button className="countdown-btn" onClick={() => navigate("/ready")}>
             YES 😍
           </button>
@@ -53,6 +74,18 @@ export default function Question() {
               countdown-btn
               opacity-80
             "
+            onClick={() => navigate("/warning")}
+          >
+            NO 🙄
+          </button>
+        </div> */}
+        <div className="flex flex-col sm:flex-row gap-5 justify-center mt-6">
+          <button className="countdown-btn" onClick={() => navigate("/ready")}>
+            YES 😍
+          </button>
+
+          <button
+            className="countdown-btn opacity-80"
             onClick={() => navigate("/warning")}
           >
             NO 🙄

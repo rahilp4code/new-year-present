@@ -6,14 +6,12 @@ import Question from "./pages/Question";
 import Warning from "./pages/Warning";
 import Ready from "./pages/Ready";
 import NewYear from "./pages/NewYear";
+import Gifts from "./pages/Gifts";
+import Letter from "./pages/Letter";
+import Bouquet from "./pages/Bouquet";
+import Camera from "./pages/Camera";
 
 function App() {
-  // return (
-  //   <>
-  //     {/* <Auth /> */}
-  //     <Countdown />
-  //   </>
-  // );
   return (
     <BrowserRouter>
       <Routes>
@@ -24,6 +22,10 @@ function App() {
         <Route path="/warning" element={<Warning />} />
         <Route path="/ready" element={<Ready />} />
         <Route path="/new-year" element={<NewYear />} />
+        <Route path="/gifts" element={<Gifts />} />
+        <Route path="/gift-letter" element={<Letter />} />
+        <Route path="/gift-bouquet" element={<Bouquet />} />
+        <Route path="/gift-camera" element={<Camera />} />
       </Routes>
     </BrowserRouter>
   );
