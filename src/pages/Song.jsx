@@ -59,28 +59,29 @@ export default function Song() {
             <p
               className="
                 uppercase
-                tracking-[0.3em]
+                tracking-[0.35em]
                 text-sm sm:text-base
-                font-medium
-                text-black/90
+                font-bold
+                text-[#6E6687]
               "
             >
               This song 🎧
             </p>
 
+            {/* text-[rgb(66_48_74)] */}
             <p
               className="
                 text-xl sm:text-2xl md:text-3xl
                 font-medium
-                text-black
+                text-[#37304A]
                 leading-relaxed
               "
             >
               Some memories don’t need pictures, they live forever in music.
             </p>
 
-            <p className="text-lg sm:text-xl text-black/90">
-              Every time this song plays, it reminds me of you 🖤
+            <p className="text-lg sm:text-xl text-[#6E6687]">
+              Every time this song plays, it reminds me of you... HASEEN🖤
             </p>
           </div>
 
@@ -93,7 +94,6 @@ export default function Song() {
               className="
                 w-52 sm:w-60 md:w-64
                 rounded-full
-                shadow-2xl
               "
             />
 
@@ -114,22 +114,32 @@ export default function Song() {
         <div className="mt-10 flex justify-center">
           <button
             onClick={() => navigate("/gifts")}
+            //           className="
+            //   mt-6
+            //   px-14 py-4
+            //   rounded-full
+            //   bg-black
+            //   text-white
+            //   font-semibold
+            //   tracking-widest
+
+            //   shadow-[0_0_25px_rgba(177,156,217)]
+            //   transition-all duration-300
+
+            //   hover:shadow-[0_0_40px_rgba(0,0,0)]
+            //   hover:scale-105
+            //   active:scale-95
+            // "
             className="
-    mt-6
-    px-14 py-4
-    rounded-full
-    bg-black
-    text-white
-    font-semibold
-    tracking-widest
-
-    shadow-[0_0_25px_rgba(177,156,217)]
-    transition-all duration-300
-
-    hover:shadow-[0_0_40px_rgba(0,0,0)]
-    hover:scale-105
-    active:scale-95
-  "
+  px-8 py-3
+  rounded-full
+  text-white
+  bg-gradient-to-r
+  from-[#8F87C2] via-[#B6AEE8] to-[#E3DFFF]
+  shadow-md
+  hover:scale-105
+  transition
+"
           >
             BACK
           </button>

@@ -104,23 +104,23 @@ export default function Camera() {
           >
             <p
               className="
-          uppercase
-          tracking-[0.3em]
-          text-sm sm:text-base
-          font-medium
-          text-white/80
-        "
+                uppercase
+                tracking-[0.3em]
+                text-m sm:text-base
+                font-semibold
+                text-[#C7C2E8]
+              "
             >
               Our memories 💫
             </p>
 
             <p
               className="
-          text-xl sm:text-2xl md:text-3xl
-          font-medium
-          text-white
-          leading-relaxed
-        "
+                text-xl sm:text-2xl md:text-3xl
+                font-medium
+                text-white/90
+                leading-relaxed
+              "
             >
               Hamne zyada pictures to nai khichi hain, khash ham every year lete
               photo's
@@ -129,7 +129,7 @@ export default function Camera() {
             <p
               className="
           text-lg sm:text-xl
-          text-white/90
+          text-white/75
           leading-relaxed
         "
             >
