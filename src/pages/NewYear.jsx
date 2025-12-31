@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import fireworks from "../assets/bg/fireworks.mp4";
+// import fireworks from "../assets/bg/fireworks.mp4";
 import leftSticker from "../assets/stickers/sticker-left.gif";
 import rightSticker from "../assets/stickers/sticker-right.gif";
 import song from "../assets/audio/a_thousand_years.mp3";
@@ -39,7 +39,7 @@ export default function NewYear() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src={fireworks}
+        src="/videos/fireworks.mp4"
         autoPlay
         loop
         muted

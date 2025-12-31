@@ -74,6 +74,7 @@ export default function Letter() {
           {/* VIDEO */}
           <div className="flex justify-center">
             <video
+              // src="/videos/us.mp4"
               src={video}
               autoPlay
               loop
