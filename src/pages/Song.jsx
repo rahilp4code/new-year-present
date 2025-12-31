@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
-import bg from "../assets/bg/anime-bg-2.png";
+import bg from "../assets/bg/anime-bg-2.PNG";
 import cd from "../assets/song/waves.gif";
 import songBar from "../assets/song/haseen.png";
 import song from "../assets/audio/haseen-talwiinder.mp3";
