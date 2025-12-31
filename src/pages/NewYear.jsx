@@ -1,8 +1,38 @@
 import { useNavigate } from "react-router-dom";
 import fireworks from "../assets/bg/fireworks.mp4";
+import leftSticker from "../assets/stickers/sticker-left.gif";
+import rightSticker from "../assets/stickers/sticker-right.gif";
+import song from "../assets/audio/a_thousand_years.mp3";
+import { useEffect, useRef, useState } from "react";
 
 export default function NewYear() {
   const navigate = useNavigate();
+  const audioRef = useRef(null);
+  const [playMusic, setPlayMusic] = useState(false);
+
+  // Start music after component mounts (user already clicked to come here)
+  useEffect(() => {
+    if (!audioRef.current) return;
+
+    audioRef.current.volume = 0;
+    audioRef.current.play().catch(() => {});
+
+    let v = 0;
+    const fade = setInterval(() => {
+      v += 0.05;
+      if (v >= 0.6) {
+        v = 0.6;
+        clearInterval(fade);
+      }
+      audioRef.current.volume = v;
+    }, 150);
+
+    setPlayMusic(true);
+
+    return () => {
+      audioRef.current?.pause();
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -15,6 +45,39 @@ export default function NewYear() {
         muted
         playsInline
       />
+      <audio ref={audioRef} src={song} loop preload="auto" />
+
+      {/* STICKERS LAYER */}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        {/* LEFT STICKER */}
+        <img
+          src={leftSticker}
+          alt="Sticker"
+          className="hidden sm:block
+            absolute
+            left-0
+            top-1/2
+            -translate-y-1/2
+            w-24 sm:w-32 md:w-40
+            animate-stickerFloat
+          "
+        />
+
+        {/* RIGHT STICKER */}
+        <img
+          src={rightSticker}
+          alt="Sticker"
+          className="hidden sm:block
+            absolute
+            right-0
+            top-1/2
+            -translate-y-1/2
+            w-24 sm:w-32 md:w-40
+            animate-stickerFloat
+            animation-delay-2000
+          "
+        />
+      </div>
 
       {/* Dark overlay for readability */}
       <div className="absolute inset-0" />

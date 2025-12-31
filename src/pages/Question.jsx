@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/bg/rose-bg-7.jpg";
+import leftSticker from "../assets/stickers/hands.gif";
+import rightSticker from "../assets/stickers/hands.gif";
 
 export default function Question() {
   const navigate = useNavigate();
@@ -9,6 +11,37 @@ export default function Question() {
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
+      {/* STICKERS LAYER */}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        {/* LEFT STICKER */}
+        <img
+          src={leftSticker}
+          alt="Sticker"
+          className="hidden sm:block
+                    absolute
+                    left-0
+                    top-1/2
+                    -translate-y-1/2
+                    w-24 sm:w-32 md:w-40
+                    animate-stickerFloat
+                  "
+        />
+
+        {/* RIGHT STICKER */}
+        <img
+          src={rightSticker}
+          alt="Sticker"
+          className="hidden sm:block
+                    absolute
+                    right-0
+                    top-1/2
+                    -translate-y-1/2
+                    w-24 sm:w-32 md:w-40
+                    animate-stickerFloat
+                    animation-delay-2000
+                  "
+        />
+      </div>
       <div
         className="
           w-[92%] max-w-xl
@@ -19,18 +52,6 @@ export default function Question() {
         "
       >
         {/* Title */}
-        {/* <p
-          className="
-            uppercase
-            tracking-[0.25em]
-            text-base sm:text-1g
-            font-medium
-            text-[rgb(216_129_116)]
-          "
-        >
-          Hii my love 💕
-        </p> */}
-        {/* Title */}
         <p
           className="
     uppercase
@@ -40,19 +61,10 @@ export default function Question() {
     text-[rgb(216_129_116)]
   "
         >
-          Hii my love 💕
+          Hii Jaana 💕
         </p>
 
         {/* Question */}
-        {/* <p
-          className="
-            text-lg sm:text-xl
-            font-medium
-            text-[rgb(161_61_54)]
-          "
-        >
-          I got a surprise for you…
-        </p> */}
         <p
           className="
     text-xl sm:text-2xl md:text-3xl
@@ -60,35 +72,19 @@ export default function Question() {
     text-[rgb(161_61_54)]
   "
         >
-          I got a surprise for you…
+          Tumahare liye surprise hai…
         </p>
 
-        {/* Buttons */}
-        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-          <button className="countdown-btn" onClick={() => navigate("/ready")}>
-            YES 😍
-          </button>
-
-          <button
-            className="
-              countdown-btn
-              opacity-80
-            "
-            onClick={() => navigate("/warning")}
-          >
-            NO 🙄
-          </button>
-        </div> */}
         <div className="flex flex-col sm:flex-row gap-5 justify-center mt-6">
           <button className="countdown-btn" onClick={() => navigate("/ready")}>
-            YES 😍
+            HAAN 😍
           </button>
 
           <button
             className="countdown-btn opacity-80"
             onClick={() => navigate("/warning")}
           >
-            NO 🙄
+            NAI 🙄
           </button>
         </div>
       </div>

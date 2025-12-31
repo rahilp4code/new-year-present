@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/bg/rose-bg-14.jpg";
-import photo from "../assets/letter/photo.gif";
-import cute from "../assets/letter/cute.gif";
+import video from "../assets/camera/us.mp4";
+import cute from "../assets/stickers/dance.gif";
 
 export default function Letter() {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ export default function Letter() {
               "
             >
               HAPPY NEW YEAR, <br />
-              MY LOVE.
+              HASEEN🧣.
             </h1>
 
             <p
@@ -53,38 +53,38 @@ export default function Letter() {
                 leading-relaxed
               "
             >
-              May our love continue to blossom and flourish forever.
+              Ham dono milke har pal ko khoobsurat banate rahenge hamesha.
               <br />
               <br />
-              Every moment with you is my favorite memory, and every new year
-              with you is my greatest gift.
+              Tumahare saath har pal mera sabse khoobsurat pal hota hai, aur
+              tumahare saath har naya saal mera sabse bada tohfa.
+              <br />
+              <br />
+              main bohot khushnaseeb hoon ki tum meri zindagi mein ho, aur main
+              intezaar nahi kar sakta ki hamara future kya laega.
             </p>
 
             <p className="text-lg font-medium text-[rgb(161_61_54)]">
+              Bhanbhani 😌
+              <br />
               Forever yours 💕
             </p>
           </div>
 
-          {/* PHOTO */}
-          <div className="flex justify-center md:justify-end">
-            <div
+          {/* VIDEO */}
+          <div className="flex justify-center">
+            <video
+              src={video}
+              autoPlay
+              loop
               className="
-                bg-white/80
-                p-3
-                rounded-2xl
-                shadow-lg
+                w-64 sm:w-72 md:w-80
+                aspect-[9/16]
+                rounded-3xl
+                shadow-2xl
+                object-cover
               "
-            >
-              <img
-                src={photo}
-                alt="Memory"
-                className="
-                  w-60 sm:w-72 md:w-80
-                  rounded-xl
-                  object-cover
-                "
-              />
-            </div>
+            />
           </div>
         </div>
 

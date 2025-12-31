@@ -10,6 +10,7 @@ import Gifts from "./pages/Gifts";
 import Letter from "./pages/Letter";
 import Bouquet from "./pages/Bouquet";
 import Camera from "./pages/Camera";
+import Song from "./pages/Song";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/gift-letter" element={<Letter />} />
         <Route path="/gift-bouquet" element={<Bouquet />} />
         <Route path="/gift-camera" element={<Camera />} />
+        <Route path="/gift-song" element={<Song />} />
       </Routes>
     </BrowserRouter>
   );

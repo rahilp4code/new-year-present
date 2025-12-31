@@ -1,15 +1,16 @@
 import { useState } from "react";
-import RomanticButton from "../components/RomanticButton";
+
 import bg from "../assets/bg/cherry-blossom.jpg";
 
-const SECRET_USERNAME = "her_telegram_username"; // change this
+const SECRET_USERNAME = "haseen";
 
 export default function Auth() {
+  // const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = () => {
-    if (username.trim() === SECRET_USERNAME) {
+    if (username.trim().toLowerCase() === SECRET_USERNAME) {
       window.location.href = "/countdown";
     } else {
       setError("Oops… this surprise isn’t for you 🥺💔");
@@ -30,7 +31,7 @@ export default function Auth() {
 "
       >
         <h1 className="text-3xl font-romantic text-rosePrimary">
-          For Someone Special 💖
+          For Someone Special 🩷
         </h1>
 
         <p className="text-gray-700 mb-4">

@@ -1,31 +1,50 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/bg/rose-bg-10.jpg";
+import leftSticker from "../assets/stickers/heart.gif";
+import rightSticker from "../assets/stickers/heart.gif";
 
 export default function Countdown() {
   const navigate = useNavigate();
-  const targetDate = new Date("2025-01-01T00:00:00");
 
-  const [time, setTime] = useState(getTimeLeft());
+  // 🎯 New Year target (LOCAL TIME)
+  const targetDate = new Date("2026-01-01T00:00:00");
 
-  function getTimeLeft() {
-    const diff = targetDate - new Date();
-    if (diff <= 0) return { done: true };
+  const calculateTimeLeft = () => {
+    const now = new Date().getTime();
+    const diff = targetDate.getTime() - now;
+
+    if (diff <= 0) {
+      return {
+        days: "00",
+        hours: "00",
+        mins: "00",
+        secs: "00",
+        done: true,
+      };
+    }
 
     return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      mins: Math.floor((diff / (1000 * 60)) % 60),
-      secs: Math.floor((diff / 1000) % 60),
+      days: String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, "0"),
+      hours: String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(
+        2,
+        "0"
+      ),
+      mins: String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, "0"),
+      secs: String(Math.floor((diff / 1000) % 60)).padStart(2, "0"),
       done: false,
     };
-  }
+  };
 
+  const [time, setTime] = useState(calculateTimeLeft());
+
+  // ⏱ Tick every second
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(getTimeLeft());
+    const interval = setInterval(() => {
+      setTime(calculateTimeLeft());
     }, 1000);
-    return () => clearInterval(timer);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -33,86 +52,77 @@ export default function Countdown() {
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      {/* <div className="romantic-card px-12 py-10 text-center space-y-6 w-[90%] max-w-xl"> */}
+      {/* STICKERS LAYER */}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        {/* LEFT STICKER */}
+        <img
+          src={leftSticker}
+          alt="Sticker"
+          className="hidden sm:block
+                absolute
+                left-0
+                top-1/2
+                -translate-y-1/2
+                w-24 sm:w-32 md:w-40
+                animate-stickerFloat
+              "
+        />
+
+        {/* RIGHT STICKER */}
+        <img
+          src={rightSticker}
+          alt="Sticker"
+          className="hidden sm:block
+                absolute
+                right-0
+                top-1/2
+                -translate-y-1/2
+                w-24 sm:w-32 md:w-40
+                animate-stickerFloat
+                animation-delay-2000
+              "
+        />
+      </div>
       <div className="px-12 py-10 text-center space-y-6 w-[90%] max-w-xl">
-        <p
-          //         className="
-          //   uppercase
-          //   tracking-[0.25em]
-          //   text-base sm:text-lg
-          //   font-medium
-          //   text-[rgb(216_129_116)]
-          // "
-          className="
-    uppercase
-    tracking-[0.3em]
-    text-lg sm:text-xl md:text-2xl
-    font-medium
-    text-[rgb(216_129_116)]
-  "
-        >
+        {/* Title */}
+        <p className="uppercase tracking-[0.3em] text-lg sm:text-xl md:text-2xl font-medium text-[rgb(216_129_116)]">
           OPEN WHEN ITS
         </p>
 
-        {/* TIMER */}
-
-        <div
-          className="
-  grid grid-cols-2 sm:grid-cols-4
-  gap-4 sm:gap-6
-  justify-items-center
-"
-        >
-          {["days", "hours", "mins", "secs"].map((unit) => (
-            <div key={unit} className="text-center">
-              <p
-                className="
-        text-3xl sm:text-5xl
-        font-semibold
-        text-petalText
-      "
-              >
-                {String(time[unit] ?? "00").padStart(2, "0")}
+        {/* DIGITAL CLOCK */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 justify-items-center">
+          {[
+            { label: "DAYS", value: time.days },
+            { label: "HOURS", value: time.hours },
+            { label: "MINS", value: time.mins },
+            { label: "SECS", value: time.secs },
+          ].map(({ label, value }) => (
+            <div key={label} className="text-center">
+              <p className="text-4xl sm:text-5xl font-semibold text-[rgb(161_61_54)]">
+                {value}
               </p>
-
-              <p
-                className="
-        text-[10px] sm:text-xs
-        tracking-widest
-        text-petalText/70
-        mt-1
-      "
-              >
-                {unit.toUpperCase()}
+              <p className="text-[10px] sm:text-xs tracking-widest text-[rgb(161_61_54)]/70 mt-1">
+                {label}
               </p>
             </div>
           ))}
         </div>
 
-        <p
-          //         className="
-          //   italic
-          //   text-lg sm:text-xl
-          //   font-medium
-          //   text-[rgb(216_129_116)]
-          // "
-          className="
-    italic
-    text-xl sm:text-2xl md:text-3xl
-    font-medium
-    text-[rgb(216_129_116)]
-  "
-        >
+        {/* Subtitle */}
+        <p className="italic text-xl sm:text-2xl md:text-3xl font-medium text-[rgb(216_129_116)]">
           new year
         </p>
 
+        {/* Button */}
         <button
-          className={`countdown-btn mx-auto mt-4 ${
-            !time.done && "opacity-50 cursor-not-allowed"
-          }`}
-          onClick={() =>
-            time.done ? navigate("/question") : navigate("/too-early")
-          }
+          className={`countdown-btn mx-auto mt-4`}
+          onClick={() => {
+            if (time.done) {
+              navigate("/question");
+            } else {
+              navigate("/too-early");
+            }
+          }}
         >
           NEXT
         </button>

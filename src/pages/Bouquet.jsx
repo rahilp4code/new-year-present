@@ -56,11 +56,11 @@ export default function Bouquet() {
                 opacity-90
               "
             >
-              But every flower in this bouquet carries the same love, warmth,
-              and care I wish I could hand you myself.
+              Tum hamesha bolte ho maine kabhi flower nai diye, toh yeh lo ek
+              virtual bouquet.
               <br />
               <br />
-              {/* YOU WILL EXTEND THIS PART */}
+              Next time milne pe main tumhe real mein dunga.
             </p>
 
             <button

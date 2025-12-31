@@ -11,6 +11,24 @@ body {
   color: #374151;
 }
 
+/* Hide scrollbar but allow scrolling */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE / old Edge */
+body {
+  -ms-overflow-style: none;
+}
+
 /* reusable romantic card */
 .romantic-card {
   background: rgba(255, 255, 255, 0.15);
@@ -199,5 +217,15 @@ body {
 
   100% {
     transform: translateY(0) rotate(1deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

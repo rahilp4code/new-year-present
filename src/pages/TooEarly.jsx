@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg/rose-bg-2.jpg";
+import bg from "../assets/bg/rose-bg-11.jpg";
+import leftSticker from "../assets/stickers/heart.gif";
+import rightSticker from "../assets/stickers/heart.gif";
 
 export default function TooEarly() {
   const navigate = useNavigate();
@@ -9,6 +11,37 @@ export default function TooEarly() {
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
+      {/* STICKERS LAYER */}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        {/* LEFT STICKER */}
+        <img
+          src={leftSticker}
+          alt="Sticker"
+          className="hidden sm:block
+                    absolute
+                    left-0
+                    top-1/2
+                    -translate-y-1/2
+                    w-24 sm:w-32 md:w-40
+                    animate-stickerFloat
+                  "
+        />
+
+        {/* RIGHT STICKER */}
+        <img
+          src={rightSticker}
+          alt="Sticker"
+          className="hidden sm:block
+                    absolute
+                    right-0
+                    top-1/2
+                    -translate-y-1/2
+                    w-24 sm:w-32 md:w-40
+                    animate-stickerFloat
+                    animation-delay-2000
+                  "
+        />
+      </div>
       <div
         className="
           w-[92%] max-w-xl

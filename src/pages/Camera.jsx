@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg/rose-bg72.jpg";
-import leftPhoto from "../assets/camera/left.jpg";
-import rightPhoto from "../assets/camera/right.jpg";
-import video from "../assets/camera/bleach.mp4";
+import bg from "../assets/bg/pink-sky-2.jpg";
+import leftPhoto from "../assets/camera/left.png";
+import rightPhoto from "../assets/camera/right.png";
+import leftSticker from "../assets/stickers/kiss.gif";
+import rightSticker from "../assets/stickers/sitting.gif";
 
 export default function Camera() {
   const navigate = useNavigate();
@@ -12,24 +13,56 @@ export default function Camera() {
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
+      {/* STICKERS LAYER */}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        {/* LEFT STICKER */}
+        <img
+          src={leftSticker}
+          alt="Sticker"
+          className="hidden sm:block
+          absolute
+          left-0
+          top-1/2
+          -translate-y-1/2
+          w-24 sm:w-32 md:w-40
+          animate-stickerFloat
+        "
+        />
+
+        {/* RIGHT STICKER */}
+        <img
+          src={rightSticker}
+          alt="Sticker"
+          className="hidden sm:block
+          absolute
+          right-0
+          top-1/2
+          -translate-y-1/2
+          w-24 sm:w-32 md:w-40
+          animate-stickerFloat
+          animation-delay-2000
+        "
+        />
+      </div>
+
       <div
         className="
-          romantic-card
-          w-[94%] max-w-7xl
-          px-6 sm:px-10
-          py-10 sm:py-14
-        "
+              w-[94%] max-w-7xl
+              px-6 sm:px-10
+              py-8 sm:py-8
+            "
       >
         <div className="grid lg:grid-cols-3 gap-10 items-center">
           {/* LEFT */}
           <div
             className="
-              bg-white/20 backdrop-blur-xl
-              rounded-3xl
-              p-6
-              space-y-4
-              shadow-xl
-            "
+                  bg-white/20 backdrop-blur-xl
+                  rounded-3xl
+                  p-6
+                  space-y-4
+                  shadow-xl
+                  flex flex-col justify-between
+                "
             style={{ animation: "floatLeft 6s ease-in-out infinite" }}
           >
             <img
@@ -37,60 +70,138 @@ export default function Camera() {
               alt="Memory"
               className="rounded-2xl w-full object-cover"
             />
+            <span
+              className="
+    text-center
+    text-3xl sm:text-4xl md:text-5xl
+    font-semibold
+    tracking-widest
 
-            <p className="text-lg text-white leading-relaxed">
-              Some moments don’t need words.
-              <br />
-              They just stay in the heart forever 💕
-            </p>
+    bg-gradient-to-r
+    from-sky-400
+    via-white
+    to-pink-400
+
+    bg-clip-text
+    text-transparent
+  "
+            >
+              2020
+            </span>
           </div>
 
-          {/* CENTER VIDEO */}
-          <div className="flex justify-center">
-            <video
-              src={video}
-              autoPlay
-              muted
-              loop
-              playsInline
+          {/* CENTER MEMORY CARD */}
+          <div
+            className="
+        bg-white/25 backdrop-blur-2xl
+        rounded-[2.5rem]
+        p-8 sm:p-10
+        shadow-2xl
+        text-center
+        space-y-6
+      "
+            style={{ animation: "fadeUp 1s ease forwards" }}
+          >
+            <p
               className="
-                w-64 sm:w-72 md:w-80
-                aspect-[9/16]
-                rounded-3xl
-                shadow-2xl
-                object-cover
-              "
-            />
+          uppercase
+          tracking-[0.3em]
+          text-sm sm:text-base
+          font-medium
+          text-white/80
+        "
+            >
+              Our memories 💫
+            </p>
+
+            <p
+              className="
+          text-xl sm:text-2xl md:text-3xl
+          font-medium
+          text-white
+          leading-relaxed
+        "
+            >
+              Hamne zyada pictures to nai khichi hain, khash ham every year lete
+              photo's
+            </p>
+
+            <p
+              className="
+          text-lg sm:text-xl
+          text-white/90
+          leading-relaxed
+        "
+            >
+              Pictures toh nai hai lekin memories bahut saari hain jo humne
+              saath bitayi hain.
+              <br />
+              <br />
+              Specially 16th November
+            </p>
           </div>
 
           {/* RIGHT */}
           <div
             className="
-              bg-white/20 backdrop-blur-xl
-              rounded-3xl
-              p-6
-              space-y-4
-              shadow-xl
-              flex flex-col justify-between
-            "
+                  bg-white/20 backdrop-blur-xl
+                  rounded-3xl
+                  p-6
+                  space-y-4
+                  shadow-xl
+                  flex flex-col justify-between
+                "
             style={{ animation: "floatRight 6s ease-in-out infinite" }}
           >
-            <p className="text-lg text-white leading-relaxed">
-              Every smile, every laugh, every second with you is a memory I
-              cherish 🌸
-            </p>
-
             <img
               src={rightPhoto}
               alt="Memory"
               className="rounded-2xl w-full object-cover"
             />
+            <span
+              className="
+    text-center
+    text-3xl sm:text-4xl md:text-5xl
+    font-semibold
+    tracking-widest
+
+    bg-gradient-to-r
+    from-sky-400
+    via-white
+    to-pink-400
+
+    bg-clip-text
+    text-transparent
+  "
+            >
+              2025
+            </span>
           </div>
         </div>
 
         {/* BACK */}
         <div className="mt-10 flex justify-center">
-          <button onClick={() => navigate("/gifts")} className="countdown-btn">
+          <button
+            onClick={() => navigate("/gifts")}
+            className="
+        px-10 py-3
+        rounded-full
+        font-medium
+        tracking-wide
+        text-white
+        bg-gradient-to-r
+        from-pink-400
+        via-purple-400
+        to-sky-400
+        shadow-lg
+        shadow-pink-300/40
+        transition-all
+        duration-300
+        hover:scale-105
+        hover:shadow-xl
+        active:scale-95
+      "
+          >
             BACK
           </button>
         </div>
