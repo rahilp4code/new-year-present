@@ -1,17 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import bg from "../assets/bg/cherry-blossom.jpg";
 
 const SECRET_USERNAME = "haseen";
 
 export default function Auth() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = () => {
-    if (username.trim().toLowerCase() === SECRET_USERNAME) {
-      window.location.href = "/countdown";
+    const cleaned = username.trim().toLowerCase();
+
+    if (cleaned === SECRET_USERNAME) {
+      navigate("/countdown");
     } else {
       setError("Oops… this surprise isn’t for you 🥺💔");
     }
