@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/bg/rose-bg-14.jpg";
-import video from "../assets/camera/us.mp4";
 import cute from "../assets/stickers/dance.gif";
 
 export default function Letter() {
@@ -74,8 +73,7 @@ export default function Letter() {
           {/* VIDEO */}
           <div className="flex justify-center">
             <video
-              // src="/videos/us.mp4"
-              src={video}
+              src="/videos/us.MP4"
               autoPlay
               loop
               className="
